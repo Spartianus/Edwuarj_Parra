@@ -1,140 +1,152 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Portafolio — Edwuar J. Parra</title>
-    <meta name="description" content="Portafolio profesional de Edwuar J. Parra — Ingeniero de Sistemas y Desarrollador de Software." />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="Jv.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portafolio | Edwuar J. Parra</title>
 
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    <style>
+        /* --- ESTILOS ADICIONALES PARA LAS TARJETAS --- */
+        .card {
+            display: flex; /* Alinea logo y texto en fila */
+            align-items: center; /* Centra verticalmente */
+            gap: 20px; /* Espacio entre el logo y el texto */
+            background: rgba(255, 255, 255, 0.05); /* Un toque de fondo para visibilidad */
+            padding: 2em;
+            border-radius: 10px;
+            margin-bottom: 2em;
+            backdrop-filter: blur(5px);
+            transition: transform .3s ease;
+        }
+
+        .card-logo {
+            width: 80px; /* Ajusta el tamaño según necesites */
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0; /* Evita que el logo se encoja */
+        }
+
+        .card-contenido {
+            flex: 1; /* El texto ocupa el resto del espacio */
+        }
+
+        /* Ajuste para móviles */
+        @media screen and (max-width: 600px) {
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container" role="main">
-        <header class="card" aria-labelledby="title">
-            <div class="brand">
-                <div class="avatar">
-                   <img src="Imagenes/Foto.jpg" alt="Foto de Edwuar J. Parra" loading="lazy">
-                </div>
-                <div>
-                    <h1 id="title">Edwuar J. Parra</h1>
-                    <p class="lead">Ingeniero de Sistemas • Desarrollador de Software</p>
-                </div>
-            </div>
 
-           <nav class="actions" aria-label="Acciones">
-             <!-- Usa href relativo al proyecto y el atributo download para forzar descarga -->
-            <a class="ghost" href="CV/Currículum Edwuar Jose Parra.pdf" download>Descargar CV</a>
-            </nav>
-        </header>
+	<header>
+		<div class="contenedor">
+			<h2 class="logotipo">Edwuar J. Parra</h2>
 
-        <aside class="sidebar" aria-labelledby="perfil">
-            <h2 id="perfil" class="section-title">Contacto</h2>
-            <div class="contact-list">
-                <div class="contact-item"><span class="tag">📍</span> Maracay, Edo. Aragua</div>
-                <div class="contact-item"><span class="tag">✉️</span> <a href="mailto:edwuarj2013@gmail.com">edwuarj2013@gmail.com</a></div>
-                <div class="contact-item"><span class="tag">📞</span>www.linkedin.com/in/edwuar-parra-7a8a47253</div>
-            </div>
+			<nav>
+				<a href="#inicio" class="activo">Inicio</a>
+				<a href="#sobre">Sobre mí</a>
+				<a href="#experiencia">Experiencia</a>
+				<a href="#habilidades">Habilidades</a>
+				<a href="CV/Currículum Edwuar Jose Parra.pdf" download>Descargar CV</a>
+			</nav>
+		</div>
+	</header>
 
-            <h3 class="section-title">Idiomas</h3>
-            <p class="about">Español — Nativo</p>
+	<main>
 
-            <h3 class="section-title">Aptitudes</h3>
-            <ul class="softskills">
-                <li>Deseos de aprender</li>
-                <li>Responsable y honesto</li>
-                <li>Actitud positiva y de servicio</li>
-                <li>Facilidad para trabajar en equipo</li>
-                <li>Rápida adaptación</li>
-                <li>Proactividad</li>
-            </ul>
+		<section id="inicio" class="pelicula-principal">
+			<img src="img/Foto.jpg" alt="Foto de perfil">
+			<div class="contenedor">
+				<h3 class="titulo">Ingeniero de Sistemas & Desarrollador de Software</h3>
+				<p class="descripcion">
+					Apasionado por la tecnología y el desarrollo de soluciones digitales. 
+					Me caracterizo por mi responsabilidad, actitud positiva y capacidad de adaptación. 
+					Siempre en constante aprendizaje para asumir nuevos desafíos.
+				</p>
+			</div>
+		</section>
 
-            <h3 class="section-title">Habilidades</h3>
-            <div class="badges">
-                <span class="badge">HTML5</span>
-                <span class="badge">CSS3</span>
-                <span class="badge">GitHub</span>
-                <span class="badge">Inkscape</span>
-                <span class="badge">Canva</span>
-                <span class="badge">Adobe Illustrator</span>
-                <span class="badge">ChatGPT</span>
-                <span class="badge">Microsoft Copilot</span>
-            </div>
-        </aside>
+		<section id="sobre" class="contenedor seccion">
+			<h2>Sobre mí</h2>
+			<p>
+				Soy un profesional comprometido con el crecimiento continuo en el área de la informática.
+				Disfruto trabajar en equipo, aprender nuevas tecnologías y desarrollar sistemas que aporten valor.
+			</p>
+		</section>
 
-        <main class="card" aria-labelledby="sobre">
-            <section id="sobre">
-                <h2 class="section-title">Sobre mí</h2>
-                <p class="about">Soy un apasionado de la informática y la tecnología, siempre con el deseo de aprender cosas nuevas. Me considero responsable, honesto y con actitud positiva. Me adapto con facilidad y disfruto trabajar en equipo. Mi pasión por la tecnología me impulsa a mejorar continuamente y asumir nuevos desafíos.</p>
-            </section>
+		<section id="experiencia" class="contenedor seccion">
+			<h2>Experiencia Profesional</h2>
 
-            <section>
-                <h3 class="section-title">Experiencia</h3>
-                <div class="timeline">
-                    <div class="item">
-                        <h5>Instructor voluntario de tecnología — Parroquia La Ascensión (May 2023 - Jul 2023)</h5>
-                        <p>Clases de informática para niños, mantenimiento y reparaciones de equipos.</p>
-                    </div>
-                    <div class="item">
-                        <h5>Desarrollador de Software — CEMA VZLA (Abr 2024 - Ago 2025)</h5>
-                        <p>Diseño y creación de sistemas de información.</p>
-                    </div>
-                    <div class="item">
-                        <h5>Técnico de soporte TIC — Clínica Lugo (Oct 2024 - Dic 2024)</h5>
-                        <p>Instalación, configuración y mantenimiento de equipos. Formateo e instalación de software.</p>
-                    </div>
-                </div>
-            </section>
+			<div class="card">
+				<img src="img/Fondo 2.png" alt="Logo" class="card-logo">
+				<div class="card-contenido">
+					<h4>Instructor Voluntario de Tecnología (Mayo 2023 - Julio 2023)</h4>
+					<p>Clases de informática para niños y mantenimiento de equipos.</p>
+				</div>
+			</div>
 
-           <section>
-                <h3 class="section-title">Datos academicos</h3>
-                <div class="Education">
-                    <div class="item">
-                        <h5>Primaria: E.B “Francisco de Miranda”</h5>
-                    </div>
-                    <div class="item">
-                        <h5>Secundaria: U.E.P “República de Venezuela</h5>
-                    </div>
-                    <div class="item">
-                        <h5>Superior: I.U.P “Santiago Mariño” (Acto de graduación pendiente)</h5>
-                    </div>
-                    <div class="item">
-                        <h5>Cursos y certificaciones</h5>
-                        <p>Operador Windows — Centro de formación Maracay (2016)</p>
-                        <p>Ensamblaje y mantenimiento de computadoras — Centro de formación Maracay (2016)</p>
-                        <p>Algorítmica — Centro Escuela de Sistemas e Informática (2018)</p>
-                        <p>Diseño Web con HTML5 + CSS — Programa de formación digital Conecta Empleo (2022)</p>
-                        <p>Office básico — Programa de formación digital Conecta Empleo (2022)</p>
-                        <p>Curso de programación básica — Platzi (2023)</p>
-                        <p>Mantenimiento y ensamblaje de equipos — Centro Escuela de Sistemas e Informática (2024)</p>
-                    </div>
-                </div>
-            </section>
-            </section>
-        </main>
+			<div class="card">
+				<img src="img/Fondo 2.png" alt="Logo" class="card-logo">
+				<div class="card-contenido">
+					<h4>Desarrollador de Software — CEMA VZLA (Abril 2024 - Agosto 2025)</h4>
+					<p>Diseño y desarrollo de sistemas de información.</p>
+				</div>
+			</div>
 
-        <footer>
-            <div>© <span id="year"></span> Edwuar J. Parra — Ingeniero de Sistemas</div>
-        </footer>
-    </div>
+			<div class="card">
+				<img src="img/Fondo 2.png" alt="Logo" class="card-logo">
+				<div class="card-contenido">
+					<h4>Técnico de Soporte TIC — Clínica Lugo (Octubre 2024 - Diciembre 2024)</h4>
+					<p>Instalación, mantenimiento y configuración de equipos informáticos.</p>
+				</div>
+			</div>
 
-    <script>
-        function downloadCV(){
-            const url = '/mnt/data/Currículum Edwuar Jose Parra (5-11-2025).pdf';
-            window.open(url, '_blank');
-        }
+			<div class="card">
+				<img src="img/Fondo 2.png" alt="Logo" class="card-logo">
+				<div class="card-contenido">
+					<h4>Community Manager — Parlar Digital (Noviembre 2025 - Diciembre 2025)</h4>
+					<p>Administración de redes sociales, redaccion de copys.</p>
+				</div>
+			</div>
+		</section>
 
-        function handleSubmit(e){
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value || 'Contacto desde portafolio';
-            const message = document.getElementById('message').value;
-            const mailto = `mailto:edwuarj2013@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Nombre: '+name+' ('+email+')\n\n'+message)}`;
-            window.location.href = mailto;
-        }
+		<section id="habilidades" class="contenedor seccion">
+			<h2>Habilidades</h2>
+			<div class="habilidades-grid">
+				<span class="badge">HTML</span>
+				<span class="badge">CSS</span>
+				<span class="badge">Canva</span>
+				<span class="badge">C#</span>
+				<span class="badge">SQL</span>
+				<span class="badge">Inkscape</span>
+				<span class="badge">Github</span>
+				<span class="badge">ChatGPT & Copilot</span>
+				<span class="badge">SQlite</span>
+				<span class="badge">Mysql</span>
+			</div>
+		</section>
 
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+		<section id="contacto" class="contenedor seccion">
+			<h2>Contacto</h2>
+			<p>📍 Maracay, Edo. Aragua</p>
+			<p>✉️ <a href="mailto:edwuarj2013@gmail.com">edwuarj2013@gmail.com</a></p>
+			<p>🔗 www.linkedin.com/in/edwuar-parra-7a8a47253</p>
+		</section>
+
+	</main>
+
+	<footer class="contenedor">
+		<p>© <span id="year"></span> Edwuar J. Parra — Ingeniero de Sistemas</p>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+
 </body>
 </html>
