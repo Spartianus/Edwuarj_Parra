@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Edwuar J. Parra</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-proyectos">
+
+    <header>
+        <div class="contenedor">
+            <h2 class="logotipo">Edwuar J. Parra</h2>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#sobre">Sobre mí</a>
+                <a href="index.html#experiencia">Experiencia</a>
+                <a href="index.html#habilidades">Habilidades</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <h1 class="titulo-pagina">Proyectos de Software</h1>
+
+        <section class="proyecto-item">
+            <div class="proyecto-imagen">
+                <img src="img/Sistema_login.png" alt="Sistema de Gestión Rafael">
+                <img src="img/Sistema_Rafael.png" alt="Sistema de Gestión Rafael">
+            </div>
+            <div class="proyecto-texto">
+                <h3>Sistema de Gestión de Historias Médicas</h3>
+                <p>
+                    Programa de gestión clínica desarrollado en <strong>C# utilizando .NET 8, Visual Studio como entorno de desarrollo</strong> 
+                     y SQLite como gestor de base de datos, esta orientado a la administración y organización de historias médicas odontológicas.
+                </p>
+            </div>
+        </section>
+
+        <div class="contenedor-volver">
+            <a href="index.html" class="proyectos">Volver al Inicio</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Edwuar J. Parra — Ingeniero de Sistemas</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -77,6 +77,8 @@ header nav a.activo {
     border: 4px solid var(--rojo);
     box-shadow: 0 0 25px rgba(0, 238, 255, 0.6);
     margin-bottom: 20px;
+    /* Ajusta este valor para bajar o subir la foto */
+    margin-top: 80px; 
 }
 
 .pelicula-principal .titulo {
@@ -87,15 +89,36 @@ header nav a.activo {
 
 .pelicula-principal .descripcion {
     max-width: 700px;
-    margin: 0 auto 1.25em auto;
+    margin: 0 auto 25px auto;
     font-size: 1.2em;
     line-height: 1.8em;
 }
 
+/* ---- BOTÓN PROYECTOS (Ahora fuera de las llaves de celular) ---- */
+.proyectos {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--rojo) !important;
+    color: #000000 !important;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid var(--rojo);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.proyectos:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+    transform: scale(1.05);
+}
+
 /* ---- ----- ----- Secciones Generales ----- ----- ----- */
 .seccion {
-    padding: 2em 0;    /* Antes era 5em. Ahora es más estrecho. */
-    margin-bottom: 1em; /* Antes era 3em. Las secciones están más cerca. */
+    padding: 2em 0;
+    margin-bottom: 1em;
     background: transparent;
     color: #fff;
 }
@@ -112,7 +135,7 @@ header nav a.activo {
     color: #f1f1f1;
 }
 
-/* ---- ----- ----- Experiencia (Cards con Logo) ----- ----- ----- */
+/* ---- ----- ----- Experiencia ----- ----- ----- */
 .card {
     display: flex;
     align-items: center;
@@ -168,7 +191,7 @@ header nav a.activo {
 /* ---- ----- ----- Footer ----- ----- ----- */
 footer {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -210,5 +233,79 @@ footer span {
     .card-logo {
         width: 70px;
         height: 70px;
+    }
+
+    
+}
+
+/* --- ESTE BLOQUE DEBE IR AL FINAL DE TU CSS, FUERA DE CUALQUIER LLAVE --- */
+
+/* --- TÍTULO PRINCIPAL --- */
+.titulo-pagina {
+    font-family: 'Bebas Neue', cursive;
+    color: #ffffff;          /* Color blanco */
+    font-size: 3.5em;
+    text-align: center;      /* Centrado */
+    margin-top: 60px;
+    margin-bottom: 80px;     /* Más espacio entre el título y el proyecto */
+    letter-spacing: 2px;
+}
+
+/* --- CONTENEDOR DEL PROYECTO --- */
+.proyecto-item {
+    display: flex;
+    align-items: center;     /* Alinea verticalmente imagen y texto */
+    justify-content: center;
+    gap: 50px;               /* Espacio entre imagen y texto */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 238, 255, 0.2);
+    margin-bottom: 50px;
+}
+
+/* --- IMAGEN (Más grande) --- */
+.proyecto-item .proyecto-imagen {
+    flex: 0 0 auto;
+    width: 450px;            /* Tamaño de la imagen aumentado */
+}
+
+.proyecto-item .proyecto-imagen img {
+    width: 100% !important;
+    max-width: 450px !important; 
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--rojo);
+    box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
+}
+
+/* --- TEXTO A LA DERECHA --- */
+.proyecto-item .proyecto-texto {
+    flex: 1;
+    color: #ffffff;          /* Texto en color blanco */
+}
+
+.proyecto-item .proyecto-texto h3 {
+    color: var(--rojo);      /* El título del sistema en tu azul celeste */
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.proyecto-item .proyecto-texto p {
+    color: #ffffff;          /* Párrafo en blanco */
+    font-size: 1.25em;
+    line-height: 1.8;
+}
+
+/* Ajuste para que no se rompa en celulares */
+@media screen and (max-width: 900px) {
+    .proyecto-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .proyecto-item .proyecto-imagen {
+        width: 100%;
+        max-width: 400px;
     }
 }
