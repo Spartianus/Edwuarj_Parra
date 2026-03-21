@@ -78,7 +78,7 @@ header nav a.activo {
     box-shadow: 0 0 25px rgba(0, 238, 255, 0.6);
     margin-bottom: 20px;
     /* Ajusta este valor para bajar o subir la foto */
-    margin-top: 80px; 
+    margin-top: 80px;
 }
 
 .pelicula-principal .titulo {
@@ -234,8 +234,6 @@ footer span {
         width: 70px;
         height: 70px;
     }
-
-    
 }
 
 /* --- ESTE BLOQUE DEBE IR AL FINAL DE TU CSS, FUERA DE CUALQUIER LLAVE --- */
@@ -243,20 +241,20 @@ footer span {
 /* --- TÍTULO PRINCIPAL --- */
 .titulo-pagina {
     font-family: 'Bebas Neue', cursive;
-    color: #ffffff;          /* Color blanco */
+    color: #ffffff;
     font-size: 3.5em;
-    text-align: center;      /* Centrado */
+    text-align: center;
     margin-top: 60px;
-    margin-bottom: 80px;     /* Más espacio entre el título y el proyecto */
+    margin-bottom: 80px;
     letter-spacing: 2px;
 }
 
 /* --- CONTENEDOR DEL PROYECTO --- */
 .proyecto-item {
     display: flex;
-    align-items: center;     /* Alinea verticalmente imagen y texto */
+    align-items: center;
     justify-content: center;
-    gap: 50px;               /* Espacio entre imagen y texto */
+    gap: 50px;
     background: rgba(255, 255, 255, 0.05);
     padding: 50px;
     border-radius: 15px;
@@ -265,35 +263,83 @@ footer span {
     margin-bottom: 50px;
 }
 
-/* --- IMAGEN (Más grande) --- */
+/* --- CARRUSEL DE IMÁGENES --- */
 .proyecto-item .proyecto-imagen {
     flex: 0 0 auto;
-    width: 450px;            /* Tamaño de la imagen aumentado */
+    width: 450px;
 }
 
-.proyecto-item .proyecto-imagen img {
-    width: 100% !important;
-    max-width: 450px !important; 
+.carrusel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carrusel-track img {
+    width: 100%;
+    max-width: 450px;
+    flex: 0 0 100%;
     height: auto;
     border-radius: 10px;
     border: 2px solid var(--rojo);
     box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
 }
 
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carrusel-btn:hover {
+    background: rgba(0, 238, 255, 0.85);
+    color: #000000;
+}
+
+.carrusel-btn.anterior {
+    left: -20px;
+}
+
+.carrusel-btn.siguiente {
+    right: -20px;
+}
+
 /* --- TEXTO A LA DERECHA --- */
 .proyecto-item .proyecto-texto {
     flex: 1;
-    color: #ffffff;          /* Texto en color blanco */
+    color: #ffffff;
 }
 
 .proyecto-item .proyecto-texto h3 {
-    color: var(--rojo);      /* El título del sistema en tu azul celeste */
+    color: var(--rojo);
     font-size: 2.2em;
     margin-bottom: 20px;
 }
 
 .proyecto-item .proyecto-texto p {
-    color: #ffffff;          /* Párrafo en blanco */
+    color: #ffffff;
     font-size: 1.25em;
     line-height: 1.8;
 }
@@ -304,8 +350,17 @@ footer span {
         flex-direction: column;
         text-align: center;
     }
+
     .proyecto-item .proyecto-imagen {
         width: 100%;
         max-width: 400px;
+    }
+
+    .carrusel-btn.anterior {
+        left: 10px;
+    }
+
+    .carrusel-btn.siguiente {
+        right: 10px;
     }
 }

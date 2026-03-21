@@ -25,15 +25,23 @@
         <h1 class="titulo-pagina">Proyectos de Software</h1>
 
         <section class="proyecto-item">
-            <div class="proyecto-imagen">
-                <img src="img/Sistema_login.png" alt="Sistema de Gestión Rafael">
-                <img src="img/Sistema_Rafael.png" alt="Sistema de Gestión Rafael">
+            <div class="proyecto-imagen carrusel">
+                <button class="carrusel-btn anterior" type="button" aria-label="Ver imagen anterior">&#10094;</button>
+
+                <div class="carrusel-viewport">
+                    <div class="carrusel-track">
+                        <img src="img/Sistema_login.png" alt="Pantalla de inicio de sesión del sistema de historias médicas">
+                        <img src="img/Sistema_Rafael.png" alt="Vista principal del sistema de gestión de historias médicas">
+                    </div>
+                </div>
+
+                <button class="carrusel-btn siguiente" type="button" aria-label="Ver imagen siguiente">&#10095;</button>
             </div>
             <div class="proyecto-texto">
                 <h3>Sistema de Gestión de Historias Médicas</h3>
                 <p>
-                    Programa de gestión clínica desarrollado en <strong>C# utilizando .NET 8, Visual Studio como entorno de desarrollo</strong> 
-                     y SQLite como gestor de base de datos, esta orientado a la administración y organización de historias médicas odontológicas.
+                    Programa de gestión clínica desarrollado en <strong>C# utilizando .NET 8, Visual Studio como entorno de desarrollo</strong>
+                    y SQLite como gestor de base de datos. Está orientado a la administración y organización de historias médicas odontológicas.
                 </p>
             </div>
         </section>
@@ -49,6 +57,27 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const track = document.querySelector('.carrusel-track');
+        const slides = document.querySelectorAll('.carrusel-track img');
+        const btnAnterior = document.querySelector('.carrusel-btn.anterior');
+        const btnSiguiente = document.querySelector('.carrusel-btn.siguiente');
+
+        let indice = 0;
+
+        function actualizarCarrusel() {
+            track.style.transform = `translateX(-${indice * 100}%)`;
+        }
+
+        btnSiguiente.addEventListener('click', () => {
+            indice = (indice + 1) % slides.length;
+            actualizarCarrusel();
+        });
+
+        btnAnterior.addEventListener('click', () => {
+            indice = (indice - 1 + slides.length) % slides.length;
+            actualizarCarrusel();
+        });
     </script>
 </body>
 </html>
