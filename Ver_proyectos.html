@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos | Edwuar J. Parra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -26,14 +27,35 @@
 
         <section class="proyecto-item">
             <div class="proyecto-imagen">
-                <img src="img/Sistema_login.png" alt="Sistema de Gestión Rafael">
-                <img src="img/Sistema_Rafael.png" alt="Sistema de Gestión Rafael">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/Sistema_login.png" alt="Sistema de Gestión - Login">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/Sistema_Rafael.png" alt="Sistema de Gestión - Dashboard">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/imagen_consulta.png" alt="Sistema de Gestión - Dashboard">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/Registrar_paciente.png" alt="Sistema de Gestión - Dashboard">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
+
             <div class="proyecto-texto">
-                <h3>Sistema de Gestión de Historias Médicas</h3>
+                <h3>Sistema de Gestión de Historias Médicas Odontológicas</h3>
                 <p>
-                    Programa de gestión clínica desarrollado en <strong>C# utilizando .NET 8, Visual Studio como entorno de desarrollo</strong> 
-                     y SQLite como gestor de base de datos, esta orientado a la administración y organización de historias médicas odontológicas.
+                Programa de gestión clínica desarrollado en <strong>C# utilizando .NET 8, Visual Studio como entorno de desarrollo</strong> y SQLite como gestor de base de datos. Está orientado a la administración y organización de historias médicas odontológicas, permitiendo el registro completo de pacientes, la gestión de médicos y usuarios, así como el control de consultas médicas y la creación de historias clínicas digitales de forma eficiente.
+                </p>
+
+                <p>
+                Además, el sistema facilita la gestión de estudios y exámenes con archivos adjuntos, la generación de informes, constancias y récipes en PDF, el control de presupuestos y abonos, y la creación y restauración de copias de seguridad, garantizando una administración integral, segura y moderna de la información clínica.
                 </p>
             </div>
         </section>
@@ -47,7 +69,28 @@
         <p>© <span id="year"></span> Edwuar J. Parra — Ingeniero de Sistemas</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // Inicialización del carrusel
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            effect: "fade", // Efecto de desvanecimiento elegante
+            fadeEffect: { crossFade: true },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        // Actualización del año en el footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>

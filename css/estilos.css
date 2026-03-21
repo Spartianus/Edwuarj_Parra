@@ -271,14 +271,7 @@ footer span {
     width: 450px;            /* Tamaño de la imagen aumentado */
 }
 
-.proyecto-item .proyecto-imagen img {
-    width: 100% !important;
-    max-width: 450px !important; 
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid var(--rojo);
-    box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
-}
+
 
 /* --- TEXTO A LA DERECHA --- */
 .proyecto-item .proyecto-texto {
@@ -308,4 +301,32 @@ footer span {
         width: 100%;
         max-width: 400px;
     }
+}
+
+/* Estilos para el Carrusel */
+.swiper {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--rojo);
+    box-shadow: 0 5px 25px rgba(0, 238, 255, 0.2);
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Personalizar colores de flechas y puntos */
+:root {
+    --swiper-navigation-size: 25px; /* Tamaño de flechas */
+    --swiper-theme-color: #00eeff;  /* Color celeste de tu proyecto */
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+    border-radius: 5px;
 }
